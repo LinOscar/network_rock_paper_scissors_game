@@ -37,7 +37,7 @@ clientFrame.pack(side=tk.BOTTOM, pady=(5, 10))
 
 
 server = None
-HOST_ADDR = "0.0.0.0"
+HOST_ADDR = "140.136.144.123"
 HOST_PORT = 9090
 client_name = " "
 clients = []
@@ -74,7 +74,7 @@ def stop_server():
 
 def accept_clients(the_server, y):
     while True:
-        if len(clients) < 2:
+        if len(clients) < 3:
             client, addr = the_server.accept()
             clients.append(client)
 
@@ -90,10 +90,12 @@ def send_receive_client_message(client_connection, client_ip_addr):
 
     # send welcome message to client
     client_name = client_connection.recv(4096).decode()
-    if len(clients) < 2:
+    if len(clients) < 3:
         client_connection.send(b"welcome1")
-    else:
+    elif:
         client_connection.send(b"welcome2")
+    else:
+        client_connection.send(b"welcome3")
 
     clients_names.append(client_name)
     update_client_names_display(clients_names)  # update client names display

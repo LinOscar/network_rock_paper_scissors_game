@@ -21,7 +21,7 @@ opponent_score = 0
 
 # network client
 client = None
-HOST_ADDR = "0.0.0.0"
+HOST_ADDR = "140.136.144.123"
 HOST_PORT = 9090
 
 
